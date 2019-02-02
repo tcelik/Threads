@@ -3,7 +3,7 @@ package csd.sampleapp.app;
 public class App {
     public static void main(String[] args)
     {
-        new Sample().run();
+        new Thread(new Sample()).start();
         System.out.println("hello");
     }
 }
@@ -14,7 +14,7 @@ class Sample implements Runnable {
     @Override
     public void run()
     {
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < 10000; ++i) {
             System.out.println(i + 1);
         }
     }
