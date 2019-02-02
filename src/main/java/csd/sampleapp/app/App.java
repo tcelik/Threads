@@ -1,9 +1,13 @@
 package csd.sampleapp.app;
 
 public class App {
-    public static void main(String[] args)
+    public static void main(String[] args) throws InterruptedException
     {
-        new Thread(new Sample()).start();
+        Thread t = new Thread(new Sample());
+        t.start();
+        t.join(); //main thread, thread refasına(t) sahip. t.join(), main bekliyor. main ben seni bekliyorum der.
+
+        //main thread
         System.out.println("hello");
     }
 }
